@@ -1,0 +1,10 @@
+<header id="header">
+	<div class="header">
+        <div class="floatLeft width100P">
+             <span id="QbLogo">
+             	<a href="#" class="noDecoration">
+             		<img src="assets/images/logo.png" alt="Report"></a>
+             </span>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,28 @@
+body {
+	font-family: Verdana, sans-serif, Helvetica;
+    font-size: 12px;
+    background: #fff;
+    min-height: 100%;
+    padding-bottom: 50px;
+}
+#header {
+	background-image: none;
+    background-color: #2C3742;
+    display: block;
+    height: 50px;
+    margin: 0;
+    padding: 0 13px 0 0;
+}
+.page-footer {
+	background-image: none;
+    background-color: #2C3742;
+    height: 52px;
+    padding: 15px 13px 0;
+    padding-left: 233px;
+    border-top: 1px solid #CECECE;
+    background: #2a2725;
+    width: 100%;
+    position: fixed;
+    display: block;
+    bottom: 0;
+}

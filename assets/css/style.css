@@ -1,0 +1,29 @@
+body {
+	font-family: Verdana, sans-serif, Helvetica;
+    font-size: 12px;
+    background: #fff;
+    min-height: 100%;
+    padding-bottom: 50px;
+}
+#header {
+    display: block;
+    background: #fff url(../images/header.jpg) no-repeat fixed 13% 0%;
+}
+.page-footer {
+	background-image: none;
+    background-color: #2C3742;
+    height: 35px;
+    padding: 15px 13px 0;
+    padding-left: 233px;
+    border-top: 1px solid #CECECE;
+    width: 100%;
+    position: fixed;
+    display: block;
+    bottom: 0;
+}
+img {
+    width: 130px;
+}
+#username, #password {
+    width: 50%;   
+}
