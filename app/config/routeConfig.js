@@ -3,11 +3,11 @@
 app.config(['$routeProvider', function ($routeProvider) {
 	    $routeProvider
 	        .when('/login', {
-	            controller: 'loginController',
+	            controller: 'authenticationController',
 	            templateUrl: 'partials/content.html'
 	        })
 	        .when('/', {
-	            controller: 'HomeController',
+	            controller: 'homeController',
 	            templateUrl: 'partials/home.html'
 	        })
 	        .otherwise({ redirectTo: '/login' });
@@ -18,8 +18,10 @@ app.run(['$rootScope', '$location', '$cookieStore', '$http',
     function ($rootScope, $location, $cookieStore, $http) {
         // keep user logged in after page refresh
         $rootScope.globals = $cookieStore.get('globals') || {};
+        $rootScope.loggedinuser = $cookieStore.get('userName') || {};
         if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+            $http.defaults.headers.common['Authorization'] = 'Basic ' +
+                                                    $rootScope.globals.currentUser.authdata;
         }
 
         $rootScope.$on('$locationChangeStart', function (event, next, current) {

@@ -27,3 +27,14 @@ img {
 #username, #password {
     width: 50%;   
 }
+#welcomeUser {
+    float: right;
+}
+#logout {
+    float: right;
+    margin-top: 40px;
+    margin-right: -149px;
+}
+#heading {
+    padding-top: 90px;
+}

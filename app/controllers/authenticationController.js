@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('loginController',
+app.controller('authenticationController',
     ['$scope', '$rootScope', '$location', 'AuthenticationService',
     function ($scope, $rootScope, $location, AuthenticationService) {
         // reset login status

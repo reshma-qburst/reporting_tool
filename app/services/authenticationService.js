@@ -7,22 +7,23 @@
             var service = {};
 
             service.Login = function (username, password, callback) {
-                 var response;
+                var response = false;
 
                 $timeout(function () {
-                    $http.post('app/json/userDetails.json',{username : username , password : password})
+                    $http.post('app/json/userDetails.json', { username: username, password: password })
                     .success(function (response) {
-                        for(var list in response){ 
-                            if(username === response[list].username && password === response[list].password){
+                        for(var list in response){                            
+                            if(response[list].username === username && password === response[list].password){
                                response = { 
                                 success: username === response[list].username && password === response[list].password
                                };
-                               if(response != null && !response.success) {
-                                  response.message = 'Username or password is incorrect';
-                               }
-                               callback(response);
+                               callback(response); 
                             }
                         }
+                        if (!response.success) {
+                            response.message = 'Username or password is incorrect';
+                        }
+                        callback(response); 
                     });
                 }, 1000);
             };
@@ -33,15 +34,17 @@
                         username: username
                     }
                 };
+                $rootScope.loggedinuser = username;
                 $cookieStore.put('globals', $rootScope.globals);
+                $cookieStore.put('userName', username);
             };
 
             service.ClearCredentials = function () {
                 $rootScope.globals = {};
                 $cookieStore.remove('globals');
+                $cookieStore.remove('userName');
                 $http.defaults.headers.common.Authorization = 'Basic ';
             };
-
             return service;
         }])
 })();
