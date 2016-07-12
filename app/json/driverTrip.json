@@ -1,0 +1,122 @@
+[
+    {
+        "id": "driver1",
+        "name": "Driver 1",
+        "age": 45,
+        "phoneNumber": 695010,
+        "trip": [
+            {
+                "id": "trip1",
+                "name": "Trip 1",
+                "address": "Place 1",
+                "startTime": "2016-07-01T19:43:37+0530",
+                "endTime": "2016-07-01T20:10:05+0530",
+                "tripAmount": 250,
+                "break": 50,
+                "acceleration": 25,
+                "turn": 25
+            },
+            {
+                "id": "trip8",
+                "name": "Trip 8",
+                "address": "Place 8",
+                "startTime": "2016-07-01T10:10:00+0530",
+                "endTime": "2016-07-01T10:40:55+0530",
+                "tripAmount": 250,
+                "break": 35,
+                "acceleration": 30,
+                "turn": 35
+            },
+            {
+                "id": "trip7",
+                "name": "Trip 7",
+                "address": "Place 7",
+                "startTime": "2016-07-03T16:30:37+0530",
+                "endTime": "2016-07-03T17:55:05+0530",
+                "tripAmount": 868,
+                "break": 30,
+                "acceleration": 35,
+                "turn": 35
+            }
+        ]
+    },
+    {
+        "id": "driver2",
+        "name": "Driver 2",
+        "age": 29,
+        "phoneNumber": 695583,
+        "trip": [
+            {
+                "id": "trip2",
+                "name": "Trip 2",
+                "address": "Place 2",
+                "startTime": "2016-07-01T13:00:15+0530",
+                "endTime": "2016-07-01T14:15:05+0530",
+                "tripAmount": 560,
+                "break": 20,
+                "acceleration": 45,
+                "turn": 35
+            },
+            {
+                "id": "trip3",
+                "name": "Trip 3",
+                "address": "Place 3",
+                "startTime": "2016-07-01T14:00:00+0530",
+                "endTime": "2016-07-01T14:15:05+0530",
+                "tripAmount": 115,
+                "break": 20,
+                "acceleration": 55,
+                "turn": 25
+            }
+        ]
+    },
+    {
+        "id": "driver3",
+        "name": "Driver 3",
+        "age": 32,
+        "phoneNumber": 695582,
+        "trip": [
+            {
+                "id": "trip5",
+                "name": "Trip 5",
+                "address": "Place 5",
+                "startTime": "2016-07-02T08:10:15+0530",
+                "endTime": "2016-07-02T08:45:05+0530",
+                "tripAmount": 600,
+                "break": 40,
+                "acceleration": 45,
+                "turn": 15
+            }
+        ]
+    },
+    {
+        "id": "driver4",
+        "name": "Driver 4",
+        "age": 26,
+        "phoneNumber": 690002,
+        "trip": [
+            {
+                "id": "trip6",
+                "name": "Trip 6",
+                "address": "Place 6",
+                "startTime": "2016-07-02T05:05:45+0530",
+                "endTime": "2016-07-02T05:53:05+0530",
+                "tripAmount": 55,
+                "break": 20,
+                "acceleration": 55,
+                "turn": 25
+            },
+            {
+                "id": "trip4",
+                "name": "Trip 4",
+                "address": "Place 4",
+                "startTime": "2016-07-02T22:05:30+0530",
+                "endTime": "2016-07-02T22:40:05+0530",
+                "tripAmount": 500,
+                "break": 30,
+                "acceleration": 60,
+                "turn": 10
+            }
+        ]
+    }
+]
