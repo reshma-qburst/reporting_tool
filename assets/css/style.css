@@ -38,3 +38,12 @@ img {
 #heading {
     padding-top: 90px;
 }
+.label {
+    display: block;
+    margin-bottom: 6px;
+    line-height: 19px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    color: #333;
+}

@@ -2,6 +2,29 @@
 	<p id="welcomeUser">Welcome {{loggedinuser}}</p>
 </div>
 <span id="logout"><a href="#/login">Logout</a></a></span>
-<div id="main">
-	<p id="heading">Your trip</p>
+<div id="main" ng-controller="homeController">
+	<section id="headingTrip">
+		<p id="heading">Your trip</p>
+	</section>
+	<section ng-controller="homeController">
+	<label class="label">Choose trip</label>
+	<input list="tripList" type="" ng-model="SelectedTrip"/>
+			<datalist id="tripList">
+			    <option ng-repeat="item in ::tripList" id="{{item.id}}">
+			    {{item.name}}			    
+			    </option>
+			</datalist>
+	</section>
+	<section>
+	<label class="label">Choose Driver</label>
+	<input list="driverList" type="" ng-model="SelectedDriver"/>
+			<datalist id="driverList">
+			    <option ng-repeat="item in ::driverList" id="{{item.id}}">
+			    {{item.name}}			    
+			    </option>
+			</datalist>
+	</section>
+	<section ng-controller="homeController">
+	<label class="label">Rate Driver</label>
+	</section>
 </div>
