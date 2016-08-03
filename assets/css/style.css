@@ -40,10 +40,36 @@ img {
 }
 .label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     line-height: 19px;
     font-weight: 400;
     font-size: 13px;
     text-align: left;
-    color: #333;
+    padding:0;
+    color: #666;
+}
+.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.rating .filled {
+    color: #00CCFF;
+}
+#saveRatingButton {
+    float: right;
+}
+.error-field {
+    color: #D56161;
 }

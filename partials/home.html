@@ -3,28 +3,47 @@
 </div>
 <span id="logout"><a href="#/login">Logout</a></a></span>
 <div id="main" ng-controller="homeController">
-	<section id="headingTrip">
-		<p id="heading">Your trip</p>
-	</section>
-	<section ng-controller="homeController">
-	<label class="label">Choose trip</label>
-	<input list="tripList" type="" ng-model="SelectedTrip"/>
+	<form name="driverRatingForm" novalidate ng-submit="saveRating();">
+		<div class="row">
+			<section id="headingTrip">
+				<p id="heading">Your trip</p>
+			</section>
+			
+			<label class="label">Choose trip</label>
+			<label class="input">
+				<input list="tripList" type="" ng-model="SelectedTrip" name="tripSelected"/>
+					<p ng-class="{'error-field': driverRatingForm.$submitted &&driverRatingForm.tripSelected.$invalid}" ng-if="driverRatingForm.$submitted && driverRatingForm.tripSelected.$error.required">This field may not be null.</p>
+			</label>
 			<datalist id="tripList">
 			    <option ng-repeat="item in ::tripList" id="{{item.id}}">
-			    {{item.name}}			    
+			    {{item.name}}	    
 			    </option>
 			</datalist>
-	</section>
-	<section>
-	<label class="label">Choose Driver</label>
-	<input list="driverList" type="" ng-model="SelectedDriver"/>
+			<label class="label">Choose Driver</label>
+			<label class="input">
+				<input list="driverList" type="" ng-model="SelectedDriver" name="driverSelected"/>
+				<p ng-class="{'error-field': driverRatingForm.$submitted &&driverRatingForm.driverSelected.$invalid}" ng-if="driverRatingForm.$submitted && driverRatingForm.driverSelected.$error.required">This field may not be null.</p>
+			</label>
 			<datalist id="driverList">
 			    <option ng-repeat="item in ::driverList" id="{{item.id}}">
 			    {{item.name}}			    
 			    </option>
 			</datalist>
-	</section>
-	<section ng-controller="homeController">
-	<label class="label">Rate Driver</label>
-	</section>
+			<label class="label">Rate Driver (Please rate driver based on break, acceleration & turning speed)</label>
+			<div>
+			  	<span ng-repeat="rating in ratings">{{rating.current}} out of
+		           {{rating.max}}
+			     <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)">
+			     </div>
+		        </span>
+		    </div>
+		</div>
+		<div class="row">
+			<div class="center formFooter">
+			    <button type="submit" class="btn btn-primary" id="saveRatingButton">
+			        Save
+			    </button>
+			</div>
+		</div>
+    </form>
 </div>
