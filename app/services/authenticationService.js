@@ -11,15 +11,15 @@
 
                 $timeout(function () {
                     $http.post('app/json/userDetails.json',
-                        {
-                            headers: 
-                            {
-                                'Content-Type': 'application/x-www-form-urlencoded'
-                            }
-                        },
                         { 
                             username: username,
                             password: password
+                        },
+                        {
+                            headers: 
+                            {
+                                'X-Requested-With' :'XMLHttpRequest'
+                            }
                         })
                         .success(function (response) {
                         for(var list in response){                            
