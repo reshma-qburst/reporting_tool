@@ -10,8 +10,19 @@
                 var response = false;
 
                 $timeout(function () {
-                    $http.post('app/json/userDetails.json', { username: username, password: password })
-                    .success(function (response) {
+                    $http.post('app/json/userDetails.json',
+                        {
+                            headers: 
+                            {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            }
+                        },
+                        { 
+                            username: username,
+                            password: password
+                        })
+                        .success(function (response) {
                         for(var list in response){                            
                             if(response[list].username === username && password === response[list].password){
                                response = { 

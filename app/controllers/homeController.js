@@ -15,28 +15,42 @@
 		});
 
 		$scope.rating = 0;
-	    $scope.ratings = [{
-	        current: 1,
-	        max: 5
-	    }, {
-	        current: 1,
-	        max: 5
-	    }, {
+	    $scope.ratingBreak = [{
 	        current: 1,
 	        max: 5
 	    }];
 
-	    $scope.getSelectedRating = function (rating) {
-	    }
+	    $scope.ratingAcceleration = [{
+	    	current:1,
+	    	max:5
+	    }];
 
-	    $scope.saveRating = function(){		
+	   	$scope.ratingTurn = [{
+	    	current:1,
+	    	max:5
+	    }];
+
+	    $scope.getSelectedBreakRating = function (rating) {};
+
+	    $scope.getSelectedAccelerationRating = function (rating) {};
+
+	    $scope.getSelectedTurnRating = function (rating) {};
+
+	    $scope.saveRating = function(){
 			if($scope.driverRatingForm.$valid) {
+				console.log($scope.SelectedTrip);
+				console.log($scope.SelectedDriver);
+				localStorage.setItem('trip', $scope.SelectedTrip);
+				localStorage.setItem('driver', $scope.SelectedDriver);
+
 				console.log("saved!");
 			}
 			else{
 				console.log("invalid");
 			}
 		};
+
+		
 
 	}]);
 })();

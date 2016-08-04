@@ -3,47 +3,69 @@
 </div>
 <span id="logout"><a href="#/login">Logout</a></a></span>
 <div id="main" ng-controller="homeController">
-	<form name="driverRatingForm" novalidate ng-submit="saveRating();">
-		<div class="row">
-			<section id="headingTrip">
-				<p id="heading">Your trip</p>
-			</section>
-			
-			<label class="label">Choose trip</label>
-			<label class="input">
-				<input list="tripList" type="" ng-model="SelectedTrip" name="tripSelected"/>
-					<p ng-class="{'error-field': driverRatingForm.$submitted &&driverRatingForm.tripSelected.$invalid}" ng-if="driverRatingForm.$submitted && driverRatingForm.tripSelected.$error.required">This field may not be null.</p>
-			</label>
-			<datalist id="tripList">
-			    <option ng-repeat="item in ::tripList" id="{{item.id}}">
-			    {{item.name}}	    
-			    </option>
-			</datalist>
-			<label class="label">Choose Driver</label>
-			<label class="input">
-				<input list="driverList" type="" ng-model="SelectedDriver" name="driverSelected"/>
-				<p ng-class="{'error-field': driverRatingForm.$submitted &&driverRatingForm.driverSelected.$invalid}" ng-if="driverRatingForm.$submitted && driverRatingForm.driverSelected.$error.required">This field may not be null.</p>
-			</label>
-			<datalist id="driverList">
-			    <option ng-repeat="item in ::driverList" id="{{item.id}}">
-			    {{item.name}}			    
-			    </option>
-			</datalist>
-			<label class="label">Rate Driver (Please rate driver based on break, acceleration & turning speed)</label>
-			<div>
-			  	<span ng-repeat="rating in ratings">{{rating.current}} out of
-		           {{rating.max}}
-			     <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)">
-			     </div>
-		        </span>
-		    </div>
-		</div>
-		<div class="row">
-			<div class="center formFooter">
-			    <button type="submit" class="btn btn-primary" id="saveRatingButton">
-			        Save
-			    </button>
+		<form name="driverRatingForm" novalidate ng-submit="saveRating();">
+			<div class="row">
+				<section id="headingTrip">
+					<p id="heading">Your trip</p>
+				</section>
+				<label for="tripSelected" class="label">Choose trip</label>
+				<label class="input">
+					<input list="tripList" type="text" ng-model="SelectedTrip" id="tripSelected" name="tripSelected" required/>
+						<span ng-class="{'error-field': driverRatingForm.$submitted &&driverRatingForm.tripSelected.$invalid}" ng-if="driverRatingForm.$submitted && driverRatingForm.tripSelected.$error.required">This field may not be null.</span>
+				</label>
+				<datalist id="tripList">
+				    <option ng-repeat="item in ::tripList" id="{{item.id}}">
+				    {{item.name}}	    
+				    </option>
+				</datalist>
+				<label for="driverSelected" class="label">Choose Driver</label>
+				<label class="input">
+					<input list="driverList" type="text" ng-model="SelectedDriver" id="driverSelected" name="driverSelected" required/>
+					<span ng-class="{'error-field': driverRatingForm.$submitted &&driverRatingForm.driverSelected.$invalid}" ng-if="driverRatingForm.$submitted && driverRatingForm.driverSelected.$error.required">This field may not be null.</span>
+				</label>
+				<datalist id="driverList">
+				    <option ng-repeat="item in ::driverList" id="{{item.id}}">
+				    {{item.name}}		    
+				    </option>
+				</datalist>
+				<label for="rateDriver" class="label">Rate Driver ( Higher the rating poorer the driving skills )</label>
+
+				<label for="ratingBreakSelected" class="label">Please rate driver based on break</label>
+				<div>
+				  	<span ng-repeat="rating in ratingBreak">{{rating.current}} out of
+			           {{rating.max}}
+				     <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedBreakRating(rating)" id="ratingBreakSelected" name="ratingBreakSelected">
+				     </div>
+			        </span>
+			    </div>
+			    <label for="ratingAccelerationSelected" class="label">Please rate driver based on acceleration</label>
+			    <div>
+				  	<span ng-repeat="rating in ratingAcceleration">{{rating.current}} out of
+			           {{rating.max}}
+				     <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedAccelerationRating(rating)" id="ratingAccelerationSelected" name="ratingAccelerationSelected">
+				     </div>
+			        </span>
+			    </div>
+			    <label for="ratingTurnSelected" class="label">Please rate driver based on turning speed</label>
+			    <div>
+				  	<span ng-repeat="rating in ratingTurn">{{rating.current}} out of
+			           {{rating.max}}
+				     <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedTurnRating(rating)" id="ratingTurnSelected" name="ratingTurnSelected">
+				     </div>
+			        </span>
+			    </div>
+			    <label for="comments" class="label">Comments</label>
+				<label class="input">
+					<textarea rows="4" cols="50" ng-model="comments" id="comments" name="comments">
+					</textarea>
+				</label>
 			</div>
-		</div>
-    </form>
+			<div class="row">
+				<div class="center formFooter">
+				    <button type="submit" class="btn btn-primary" id="saveRatingButton">
+				        Save
+				    </button>
+				</div>
+			</div>
+	    </form>
 </div>

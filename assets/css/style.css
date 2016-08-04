@@ -71,5 +71,8 @@ ul.rating {
     float: right;
 }
 .error-field {
+    display: block;
     color: #D56161;
+    font-size: small;
+    font-weight: normal;
 }
