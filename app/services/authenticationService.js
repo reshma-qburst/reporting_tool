@@ -8,7 +8,6 @@
 
             service.Login = function (username, password, callback) {
                 var response = false;
-
                 $timeout(function () {
                     $http.get('app/json/userDetails.json',{username: username,password: password})
                         .success(function (response) {
@@ -23,6 +22,7 @@
                         if (!response.success) {
                             response.message = 'Username or password is incorrect';
                         }
+
                         callback(response); 
                     });
                 }, 1000);
@@ -35,6 +35,7 @@
                     }
                 };
                 $rootScope.loggedinuser = username;
+                $rootScope.ifLoggedIn = true;
                 $cookieStore.put('globals', $rootScope.globals);
                 $cookieStore.put('userName', username);
             };
@@ -43,6 +44,7 @@
                 $rootScope.globals = {};
                 $cookieStore.remove('globals');
                 $cookieStore.remove('userName');
+                $rootScope.ifLoggedIn = false;
                 $http.defaults.headers.common.Authorization = 'Basic ';
             };
             return service;
