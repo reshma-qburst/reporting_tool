@@ -6,7 +6,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 	            controller: 'authenticationController',
 	            templateUrl: 'partials/content.html'
 	        })
-	        .when('/', {
+            .when('/records',{
+                controller: 'chartController',
+                templateUrl: 'partials/records.html'
+            })
+	        .when('/home', {
 	            controller: 'homeController',
 	            templateUrl: 'partials/home.html'
 	        })

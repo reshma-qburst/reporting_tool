@@ -8,6 +8,7 @@ body {
 #header {
     display: block;
     background: #fff url(../images/header.jpg) no-repeat fixed 13% 0%;
+    position: relative;
 }
 .page-footer {
 	background-image: none;
@@ -27,19 +28,11 @@ img {
 #username, #password {
     width: 50%;   
 }
-#welcomeUser {
-    float: right;
-}
-#logout {
-    float: right;
-    margin-top: 40px;
-    margin-right: -149px;
-}
 #heading {
-    padding-top: 90px;
+    padding-top: 40px;
 }
 .label {
-    display: block;
+    display: inline-block;
     margin-bottom: 10px;
     line-height: 19px;
     font-weight: 400;
@@ -47,6 +40,7 @@ img {
     text-align: left;
     padding:0;
     color: #666;
+    width: 50%;
 }
 .rating {
     color: #a9a9a9;
@@ -75,4 +69,84 @@ ul.rating {
     color: #D56161;
     font-size: small;
     font-weight: normal;
+}
+#viewChartHeading {
+    font-size: large;
+    font-weight: bold;
+    padding-top: 50px;
+}
+.axis path, .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+.axis path{
+    fill: none;
+    stroke: none;
+}
+.bar {
+    fill: steelblue;
+}
+.input {
+       display: inline-block;
+}
+.wrapper {
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee;
+}
+#logoutDiv {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+}
+#welcomeUser {
+    font-size: large;
+}
+#headingTrip{
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+.ratingText {
+    font-weight: 100;
+}
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+    list-style-type: none;
+}
+#recordsMain {
+    padding: 50px;
+}
+ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+.active {
+    background-color: #4CAF50;
 }

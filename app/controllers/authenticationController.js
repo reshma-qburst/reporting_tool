@@ -8,10 +8,11 @@ app.controller('authenticationController',
 
         $scope.login = function () {
             $scope.dataLoading = true;
+            $rootScope.ifLoggedIn = false;
             AuthenticationService.Login($scope.username, $scope.password, function (response) {
                 if (response.success) {
                     AuthenticationService.SetCredentials($scope.username, $scope.password);
-                    $location.path('/');
+                    $location.path('/home');
                 } else {
                     $scope.error = response.message;
                     $scope.dataLoading = false;
