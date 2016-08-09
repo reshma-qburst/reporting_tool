@@ -1,5 +1,6 @@
 <div id="recordsMain" ng-controller="chartController">
-<table>
+<h1 id="recordHeading">Event Record</h1>
+<table id="recordsTable">
 	<tbody>
 		<tr>
 			<th></th>
@@ -15,8 +16,12 @@
 		</tr>
 		<tr ng-repeat="i in tableData">
 			<td>{{i.name}}</td>
-			<td ng-repeat="j in i.trip">{{j.break}}</td>
+			<td>{{i.sumBreak}}</td>
+			<td>{{i.sumAcc}}</td>
+			<td>{{i.sumTurn}}</td>
+			<td>{{i.total}}</td>
 		</tr>
 	</tbody>	
 </table>
+<bar-chart height="options.height" data="data" hovered="hovered(args)"></bar-chart>
 </div>

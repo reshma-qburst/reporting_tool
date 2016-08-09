@@ -2,8 +2,8 @@ d3.custom = {};
 
 d3.custom.barChart = function module() {
     var margin = {top: 20, right: 20, bottom: 40, left: 40},
-        width = 250,
-        height = 250,
+        width = 550,
+        height = 450,
         gap = 10,
         ease = 'cubic-in-out';
     var svg, duration = 500;
@@ -15,34 +15,22 @@ d3.custom.barChart = function module() {
             var chartW = width - margin.left - margin.right,
                 chartH = height - margin.top - margin.bottom;
 
-
-                
-
             var x1 = d3.scale.ordinal()
                 .domain(_data.map(function(d, i){ 
-                 
-                    return i; }))
+                    return d; }))
                 .rangeRoundBands([0, chartW], .1);
 
-                
-
             var y1 = d3.scale.linear()
-                .domain([0, d3.max(_data, function(d, i){ return d; })])
-                .range([chartH, 0]);
-
-                
+                .domain([0, 500])
+                .range([chartH, 0]);                
 
             var xAxis = d3.svg.axis()
                 .scale(x1)
-                .orient('bottom');
-
-                
+                .orient('bottom');                
 
             var yAxis = d3.svg.axis()
                 .scale(y1)
-                .orient('left');
-
-                
+                .orient('left');                
 
             var barW = chartW / _data.length;
 
@@ -71,10 +59,7 @@ d3.custom.barChart = function module() {
                 .transition()
                 .duration(duration)
                 .ease(ease)
-                .call(yAxis);
-
-
-                
+                .call(yAxis);                
 
             var gapSize = x1.rangeBand() / 100 * gap;
             var barW = x1.rangeBand() - gapSize;

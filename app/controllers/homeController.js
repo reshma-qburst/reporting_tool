@@ -57,14 +57,6 @@
 			$scope.comments = "";
 		};
 
-		$scope.options = {width: 600, height: 300, 'bar': 'aaa'};
-        $scope.data = [1, 2, 3, 4];
-        $scope.hovered = function(d){
-        	$scope.barValue = d;
-            $scope.$apply();
-        };
-        $scope.barValue = 'None';
-
         $rootScope.menuClass = function(page) {
 		    var current = $location.path().substring(1);
 		    return page === current ? "active" : "";
