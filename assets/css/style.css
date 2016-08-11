@@ -197,3 +197,12 @@ ul.menu {
     padding-top: 20px;
     padding-bottom: 50px;
 }
+
+#recordsTable {
+    width: 100%;
+}
+
+td,
+th {
+    text-align: center;
+}
