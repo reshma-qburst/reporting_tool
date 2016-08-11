@@ -1,18 +1,18 @@
 <header id="header">
-	<div>
+    <div>
         <div>
-             <span>
-             	<a href="#">
-             		<img src="assets/images/logo.jpg" alt="Report"></a>
+            <span>
+                <a href="#">
+                    <img src="assets/images/logo.jpg" alt="Report"></a>
              </span>
         </div>
     </div>
 </header>
 <div id="logoutDiv" ng-show="ifLoggedIn">
-	<p id="welcomeUser">Welcome {{loggedinuser}}</p>
-	<span id="logout"><a href="#/login">Logout</a></a></span>
+    <p id="welcomeUser">Welcome {{loggedinuser}}</p>
+    <span id="logout"><a href="#/login">Logout</a></a></span>
 </div>
 <ul class="menu" ng-show="ifLoggedIn">
     <li ng-class="menuClass('home')"><a href="#home">Home</a></li>
     <li ng-class="menuClass('records')"><a href="#records">Records</a></li>
- </ul>
+</ul>

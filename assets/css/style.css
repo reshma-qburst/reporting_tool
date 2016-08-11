@@ -1,17 +1,19 @@
 body {
-	font-family: Verdana, sans-serif, Helvetica;
+    font-family: Verdana, sans-serif, Helvetica;
     font-size: 12px;
     background: #fff;
     min-height: 100%;
     padding-bottom: 50px;
 }
+
 #header {
     display: block;
     background: #fff url(../images/header.jpg) no-repeat fixed 13% 0%;
     position: relative;
 }
+
 .page-footer {
-	background-image: none;
+    background-image: none;
     background-color: #2C3742;
     height: 35px;
     padding: 15px 13px 0;
@@ -22,15 +24,20 @@ body {
     display: block;
     bottom: 0;
 }
+
 img {
     width: 123px;
 }
-#username, #password {
-    width: 50%;   
+
+#username,
+#password {
+    width: 50%;
 }
+
 #heading {
     padding-top: 40px;
 }
+
 .label {
     display: inline-block;
     margin-bottom: 10px;
@@ -38,18 +45,21 @@ img {
     font-weight: 400;
     font-size: 13px;
     text-align: left;
-    padding:0;
+    padding: 0;
     color: #666;
     width: 50%;
 }
+
 .rating {
     color: #a9a9a9;
     margin: 0;
     padding: 0;
 }
+
 ul.rating {
     display: inline-block;
 }
+
 .rating li {
     list-style-type: none;
     display: inline-block;
@@ -58,73 +68,94 @@ ul.rating {
     font-weight: bold;
     cursor: pointer;
 }
+
 .rating .filled {
     color: #00CCFF;
 }
+
 #saveRatingButton {
     float: right;
 }
+
 .error-field {
     display: block;
     color: #D56161;
     font-size: small;
     font-weight: normal;
 }
+
 #viewChartHeading {
     font-size: large;
     font-weight: bold;
     padding-top: 50px;
 }
-.axis path, .axis line {
+
+.axis path,
+.axis line {
     fill: none;
     stroke: black;
     shape-rendering: crispEdges;
 }
-.axis path{
+
+.axis path {
     fill: none;
     stroke: none;
 }
+
 .bar {
     fill: steelblue;
 }
+
 .input {
-       display: inline-block;
+    display: inline-block;
 }
+
 .wrapper {
     margin-bottom: 30px;
     color: inherit;
     background-color: #eee;
 }
+
 #logoutDiv {
     position: absolute;
     top: 15px;
     right: 35px;
 }
+
 #welcomeUser {
     font-size: large;
 }
-#headingTrip{
+
+#headingTrip {
     font-size: large;
     font-weight: bold;
     text-align: center;
 }
+
 .ratingText {
     font-weight: 100;
 }
-table, th , td  {
-  border: 1px solid grey;
-  border-collapse: collapse;
-  padding: 5px;
+
+table,
+th,
+td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
 }
+
 table tr:nth-child(odd) {
-  background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
+
 table tr:nth-child(even) {
-  background-color: #ffffff;
+    background-color: #ffffff;
 }
+
 li {
     float: left;
 }
+
 li a {
     display: block;
     color: white;
@@ -132,14 +163,19 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
+
+
 /* Change the link color to #111 (black) on hover */
+
 li a:hover {
     background-color: #111;
     list-style-type: none;
 }
+
 #recordsMain {
     padding-bottom: 100px;
 }
+
 ul.menu {
     list-style-type: none;
     margin: 0;
@@ -148,12 +184,15 @@ ul.menu {
     background-color: #333;
     margin-top: 50px;
 }
+
 .active {
     background-color: #4CAF50;
 }
+
 #recordsTable {
     margin-bottom: 70px;
 }
+
 .container {
     padding-top: 20px;
     padding-bottom: 50px;
