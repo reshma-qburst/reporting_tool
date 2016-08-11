@@ -1,27 +1,28 @@
 <div id="recordsMain" ng-controller="chartController">
-<h1 id="recordHeading">Event Record</h1>
-<table id="recordsTable">
-	<tbody>
-		<tr>
-			<th></th>
-			<th colspan="3" >Events</th>
-			<th colspan="1" >Score</th>
-		</tr>
-		<tr>
-			<th>Driver Name</th>
-			<th>HB</th>
-			<th>RA</th>
-			<th>SC</th>
-			<th>Total</th>
-		</tr>
-		<tr ng-repeat="i in tableData">
-			<td>{{i.name}}</td>
-			<td>{{i.sumBreak}}</td>
-			<td>{{i.sumAcc}}</td>
-			<td>{{i.sumTurn}}</td>
-			<td>{{i.total}}</td>
-		</tr>
-	</tbody>	
-</table>
-<bar-chart height="options.height" data="data" hovered="hovered(args)"></bar-chart>
+    <h1 id="recordHeading">Event Record</h1>
+    <table id="recordsTable">
+        <tbody>
+            <tr>
+                <th></th>
+                <th colspan="3">Events</th>
+                <th colspan="1">Score</th>
+            </tr>
+            <tr>
+                <th>Driver Name</th>
+                <th>HB</th>
+                <th>RA</th>
+                <th>SC</th>
+                <th>Total</th>
+            </tr>
+            <tr ng-repeat="i in tableData">
+                <td>{{i.name}}</td>
+                <td>{{i.sumBreak}}</td>
+                <td>{{i.sumAcc}}</td>
+                <td>{{i.sumTurn}}</td>
+                <td>{{i.total}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <bar-chart height="options.height" data="data" hovered="hovered(args)" ng-if="tableData"></bar-chart>
+    <div stacked-chart></div>
 </div>

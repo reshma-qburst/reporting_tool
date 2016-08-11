@@ -1,4 +1,4 @@
-app.directive('starRating', function () {
+app.directive('starRating', function() {
     return {
         restrict: 'A',
         template: '<ul class="rating">' +
@@ -11,8 +11,8 @@ app.directive('starRating', function () {
             max: '=',
             onRatingSelected: '&'
         },
-        link: function (scope, elem, attrs) {
-            var updateStars = function () {
+        link: function(scope, elem, attrs) {
+            var updateStars = function() {
                 scope.stars = [];
                 for (var i = 0; i < scope.max; i++) {
                     scope.stars.push({
@@ -21,14 +21,14 @@ app.directive('starRating', function () {
                 }
             };
 
-            scope.toggle = function (index) {
+            scope.toggle = function(index) {
                 scope.ratingValue = index + 1;
                 scope.onRatingSelected({
                     rating: index + 1
                 });
             };
 
-            scope.$watch('ratingValue', function (oldVal, newVal) {
+            scope.$watch('ratingValue', function(oldVal, newVal) {
                 if (newVal) {
                     updateStars();
                 }

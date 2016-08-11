@@ -1,65 +1,65 @@
-(function(){
-'use strict';
-	app.controller('homeController',['$scope','loadJson','saveRating','$location','$rootScope',
-		function($scope,loadJson,saveRating,$location,$rootScope){
+(function() {
+    'use strict';
+    app.controller('homeController', ['$scope', 'loadJson', 'saveRating', '$location', '$rootScope',
+        function($scope, loadJson, saveRating, $location, $rootScope) {
 
-		loadJson.getTripList().then(function(tripListData){
-			$scope.tripList = [];
-			$scope.driverList = [];
-			angular.forEach(tripListData.data, function(item){
-				angular.forEach(item.trip, function(tripItem){
-					$scope.tripList.push(tripItem);
-				});
-				$scope.driverList.push(item);
-			});
-		});
+            loadJson.getTripList().then(function(tripListData) {
+                $scope.tripList = [];
+                $scope.driverList = [];
+                angular.forEach(tripListData.data, function(item) {
+                    angular.forEach(item.trip, function(tripItem) {
+                        $scope.tripList.push(tripItem);
+                    });
+                    $scope.driverList.push(item);
+                });
+            });
 
-		$scope.rating = 0;
-	    $scope.ratingBreak = [{
-	        current: 1,
-	        max: 5
-	    }];
+            $scope.rating = 0;
+            $scope.ratingBreak = [{
+                current: 1,
+                max: 5
+            }];
 
-	    $scope.ratingAcceleration = [{
-	    	current:1,
-	    	max:5
-	    }];
+            $scope.ratingAcceleration = [{
+                current: 1,
+                max: 5
+            }];
 
-	   	$scope.ratingTurn = [{
-	    	current:1,
-	    	max:5
-	    }];
+            $scope.ratingTurn = [{
+                current: 1,
+                max: 5
+            }];
 
-	    $scope.getSelectedBreakRating = function (rating) {};
-	    $scope.getSelectedAccelerationRating = function (rating) {};
-	    $scope.getSelectedTurnRating = function (rating) {};
+            $scope.getSelectedBreakRating = function(rating) {};
+            $scope.getSelectedAccelerationRating = function(rating) {};
+            $scope.getSelectedTurnRating = function(rating) {};
 
-	    $scope.saveRating = function(){
-			if($scope.driverRatingForm.$valid) {
+            $scope.saveRating = function() {
+                if ($scope.driverRatingForm.$valid) {
 
-				localStorage.setItem('trip', $scope.SelectedTrip);
-				localStorage.setItem('driver', $scope.SelectedDriver);
-				localStorage.setItem('brakeRate', $scope.ratingBreak[0].current);
-				localStorage.setItem('accRate', $scope.ratingAcceleration[0].current);
-				localStorage.setItem('turnRate',$scope.ratingTurn[0].current);
-				localStorage.setItem('comments',$scope.comments);
+                    localStorage.setItem('trip', $scope.SelectedTrip);
+                    localStorage.setItem('driver', $scope.SelectedDriver);
+                    localStorage.setItem('brakeRate', $scope.ratingBreak[0].current);
+                    localStorage.setItem('accRate', $scope.ratingAcceleration[0].current);
+                    localStorage.setItem('turnRate', $scope.ratingTurn[0].current);
+                    localStorage.setItem('comments', $scope.comments);
 
-				$scope.showChart = saveRating.saveActivity($scope.SelectedTrip,
-					$scope.ratingBreak[0].current,$scope.ratingAcceleration[0].current,$scope.ratingTurn[0].current);
-				console.log($scope.showChart);
+                    $scope.showChart = saveRating.saveActivity($scope.SelectedTrip,
+                        $scope.ratingBreak[0].current, $scope.ratingAcceleration[0].current, $scope.ratingTurn[0].current);
+                    console.log($scope.showChart);
 
-				localStorage.setItem('chartData',$scope.showChart);
-				alert("Your ratings have been saved!");
-			}
-			else{
-				console.log("invalid");
-			}
-			$scope.comments = "";
-		};
+                    localStorage.setItem('chartData', $scope.showChart);
+                    alert("Your ratings have been saved!");
+                } else {
+                    console.log("invalid");
+                }
+                $scope.comments = "";
+            };
 
-        $rootScope.menuClass = function(page) {
-		    var current = $location.path().substring(1);
-		    return page === current ? "active" : "";
-		 };
-	}]);
+            $rootScope.menuClass = function(page) {
+                var current = $location.path().substring(1);
+                return page === current ? "active" : "";
+            };
+        }
+    ]);
 })();

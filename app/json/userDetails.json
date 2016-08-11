@@ -1,26 +1,19 @@
-[
-        {
-            "username": "User1",
-            "password": "user1"
-        },
-        {
-            "username": "User2",
-            "password": "user2"
-        },
-        {
-            "username": "User3",
-            "password": "user3"
-        },
-        {
-            "username": "User4",
-            "password": "user4"
-        },
-        {
-            "username": "User5",
-            "password": "user5"
-        },
-        {
-            "username": "User6",
-            "password": "user6"
-        }
-]
+[{
+    "username": "User1",
+    "password": "user1"
+}, {
+    "username": "User2",
+    "password": "user2"
+}, {
+    "username": "User3",
+    "password": "user3"
+}, {
+    "username": "User4",
+    "password": "user4"
+}, {
+    "username": "User5",
+    "password": "user5"
+}, {
+    "username": "User6",
+    "password": "user6"
+}]
