@@ -1,7 +1,7 @@
 <div id="recordsMain" ng-controller="chartController">
     <h1 id="recordHeading">Event Record</h1>
     <table id="recordsTable">
-        <tbody>
+        <thead>
             <tr>
                 <th></th>
                 <th colspan="3">Events</th>
@@ -14,6 +14,8 @@
                 <th>SC</th>
                 <th>Total</th>
             </tr>
+        </thead>
+        <tbody>
             <tr ng-repeat="i in tableData">
                 <td>{{i.name}}</td>
                 <td>{{i.sumBreak}}</td>
@@ -23,6 +25,12 @@
             </tr>
         </tbody>
     </table>
-    <bar-chart height="options.height" data="data" hovered="hovered(args)" ng-if="tableData"></bar-chart>
-    <div stacked-chart></div>
+    <div id="filterDiv">
+        <select ng-model="filterName" ng-options="item for item in filterOptions" ng-init="filterName=filterOptions[0]" ng-change="showChart();" id="filterId"></select>
+    </div>
+    <bar-chart height="options.height" data="data" hovered="hovered(args)" ng-if="tableData && filterFlag == 1 "></bar-chart>
+    <stackbarchart ng-if="tableData && filterFlag == 0" id="d3stackbar" xaxis-name="" xaxis-pos="" yaxis-name="Population" yaxis-pos="8" d3-format="">
+        <!-- angular directive is stackbarchart -->
+        <!-- directive variables are xaxis-name,yaxis-name,xaxis-pos,yaxis-pos,y axis data format(d3-format)
+and finally the datajson variable which is holding the external data source -->
 </div>
