@@ -24,7 +24,8 @@ d3.custom.barChart = function module() {
 
             var y1 = d3.scale.linear()
                 .domain([0, d3.max(_data, function(d) {
-                    return d.score })])
+                    return d.score
+                })])
                 .range([chartH, 0]);
 
             var xAxis = d3.svg.axis()
@@ -74,11 +75,14 @@ d3.custom.barChart = function module() {
                 .attr({
                     width: barW,
                     x: function(d, i) {
-                        return x1(d.name); },
+                        return x1(d.name);
+                    },
                     y: function(d, i) {
-                        return y1(d.score); },
+                        return y1(d.score);
+                    },
                     height: function(d, i) {
-                        return chartH - y1(d.score); }
+                        return chartH - y1(d.score);
+                    }
                 })
                 .on('mouseover', dispatch.customHover);
             bars.transition()
@@ -87,11 +91,14 @@ d3.custom.barChart = function module() {
                 .attr({
                     width: barW,
                     x: function(d, i) {
-                        return x1(d.name) },
+                        return x1(d.name)
+                    },
                     y: function(d, i) {
-                        return y1(d.score); },
+                        return y1(d.score);
+                    },
                     height: function(d, i) {
-                        return chartH - y1(d.score); }
+                        return chartH - y1(d.score);
+                    }
                 });
             bars.exit().transition().style({ opacity: 0 }).remove();
 

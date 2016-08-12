@@ -46,7 +46,6 @@
 
                     $scope.showChart = saveRating.saveActivity($scope.SelectedTrip,
                         $scope.ratingBreak[0].current, $scope.ratingAcceleration[0].current, $scope.ratingTurn[0].current);
-                    console.log($scope.showChart);
 
                     localStorage.setItem('chartData', $scope.showChart);
                     alert("Your ratings have been saved!");

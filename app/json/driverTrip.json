@@ -10,9 +10,9 @@
         "startTime": "2016-07-01T19:43:37+0530",
         "endTime": "2016-07-01T20:10:05+0530",
         "tripAmount": 250,
-        "break": 50,
-        "acceleration": 25,
-        "turn": 25
+        "break": 100,
+        "acceleration": 50,
+        "turn": 50
     }, {
         "id": "t8",
         "name": "Trip 8",

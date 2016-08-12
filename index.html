@@ -17,17 +17,19 @@
     <div ng-include="'partials/header.html'"></div>
     <div class="wrapper">
         <div class="container">
-            <div class="col-xs-offset-2 col-xs-8">
+            <div>
                 <div ng-view></div>
             </div>
         </div>
     </div>
     <div ng-include="'partials/footer.html'"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"></script>
     <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.js"></script>
-    <script src="app/reusable_chart.js"></script>
+    <script src="app/vBar_chart.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/config/routeConfig.js"></script>
     <script type="text/javascript" src="app/controllers/homeController.js"></script>
@@ -39,6 +41,7 @@
     <script type="text/javascript" src="app/directives/normalVBarDirective.js"></script>
     <script type="text/javascript" src="app/controllers/chartController.js"></script>
     <script type="text/javascript" src="app/directives/stackedVBarDirective.js"></script>
+    <script src="app/sBar_chart.js"></script>
 </body>
 
 </html>

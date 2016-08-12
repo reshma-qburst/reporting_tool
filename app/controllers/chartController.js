@@ -2,6 +2,9 @@
     'use strict';
     app.controller('chartController', ['$scope', 'loadJson', function($scope, loadJson) {
 
+        $scope.filterFlag = 1;
+        $scope.filterOptions = ["Driver", "Trip"];
+
         loadJson.getTripList().then(function(tripListData) {
 
             $scope.tableData = [];
@@ -42,6 +45,8 @@
                 });
             });
             $scope.data = jsonVerticalBarChartData;
+            $scope.barchart = jsonStackedBarChartData;
+
         });
 
         $scope.options = { width: 600, height: 400, 'bar': 'aaa' };
@@ -51,5 +56,14 @@
             $scope.$apply();
         };
         $scope.barValue = 'None';
+
+        $scope.showChart = function() {
+            if ($scope.filterName == 'Trip') {
+                $scope.filterFlag = 0;
+            } else if ($scope.filterName == 'Driver') {
+                $scope.filterFlag = 1;
+            }
+        };
+
     }]);
 })();
