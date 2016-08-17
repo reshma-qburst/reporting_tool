@@ -8,15 +8,15 @@
                 <th colspan="1">Score</th>
             </tr>
             <tr>
-                <th>Driver Name</th>
-                <th>HB</th>
-                <th>RA</th>
-                <th>SC</th>
+                <th><a ng-click="orderByField='name'; reverseSort = !reverseSort">Driver Name</th>
+                <th><a ng-click="orderByField='break'; reverseSort = !reverseSort">HB</th>
+                <th><a ng-click="orderByField='acceleration'; reverseSort = !reverseSort">RA</th>
+                <th><a ng-click="orderByField='turn'; reverseSort = !reverseSort">SC</th>
                 <th>Total</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="i in tableData">
+            <tr ng-repeat="i in tableData|orderBy:orderByField:reverseSort">
                 <td>{{i.name}}</td>
                 <td>{{i.sumBreak}}</td>
                 <td>{{i.sumAcc}}</td>
