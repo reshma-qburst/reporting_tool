@@ -11,13 +11,18 @@
                     $http.get('app/json/userDetails.json', { username: username, password: password })
                         .success(function(response) {
                             for (var list in response) {
-                                if (response[list].username === username && password === response[list].password) {
-                                    response = {
-                                        success: username === response[list].username && password === response[list].password
-                                    };
-                                    callback(response);
+                                if (response.length > 3) {
+
+                                    if (response[list].username === username &&
+                                        password === response[list].password) {
+                                        response = {
+                                            success: username === response[list].username && password === response[list].password
+                                        };
+                                        callback(response);
+                                    }
                                 }
                             }
+
                             if (!response.success) {
                                 response.message = 'Username or password is incorrect';
                             }
