@@ -4,6 +4,8 @@
 
         $scope.filterFlag = 1;
         $scope.filterOptions = ["Driver", "Trip"];
+        $scope.orderByField = 'name';
+        $scope.reverseSort = false;
 
         loadJson.getTripList().then(function(tripListData) {
 

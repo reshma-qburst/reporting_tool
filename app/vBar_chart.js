@@ -16,6 +16,8 @@ d3.custom.barChart = function module() {
             var chartW = width - margin.left - margin.right,
                 chartH = height - margin.top - margin.bottom;
 
+            var border = 1;
+
             var x1 = d3.scale.ordinal()
                 .domain(_data.map(function(d, i) {
                     return d.name;
@@ -36,17 +38,29 @@ d3.custom.barChart = function module() {
                 .scale(y1)
                 .orient('left');
 
+            var tip = d3.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function(d) {
+                    return "<strong>Score:</strong> <span style='color:steelblue'>" + d.score + "</span>";
+                });
+
+
             var barW = chartW / _data.length;
 
             if (!svg) {
                 svg = d3.select(this)
                     .append('svg')
-                    .classed('chart', true);
+                    .classed('chart', true)
+                    .attr("border", border);
                 var container = svg.append('g').classed('container-group', true);
                 container.append('g').classed('chart-group', true);
                 container.append('g').classed('x-axis-group axis', true);
                 container.append('g').classed('y-axis-group axis', true);
             }
+
+
+            svg.call(tip);
 
             svg.transition().duration(duration).attr({ width: width, height: height })
             svg.select('.container-group')
@@ -84,7 +98,8 @@ d3.custom.barChart = function module() {
                         return chartH - y1(d.score);
                     }
                 })
-                .on('mouseover', dispatch.customHover);
+                .on('mouseover', tip.show)
+                .on('mouseout', tip.hide);
             bars.transition()
                 .duration(duration)
                 .ease(ease)

@@ -10,10 +10,10 @@ app.directive('stackbarchart', function() { // Angular Directive
                 var html = "<div id='" + attrs.id + "' ></div>"; // the HTML to be produced
                 var newElem = $(html);
                 elem.replaceWith(newElem); // Replacement of the element.
-                var ourGraph = new StackbarChart($scope.barchart);
-                ourGraph.workOnElement('#' + attrs.id);
+                var stackedGraph = new StackbarChart($scope.barchart);
+                stackedGraph.workOnElement('#' + attrs.id);
                 // Work on particular element
-                ourGraph.generateGraph(); // generate the actual bar graph
+                stackedGraph.generateGraph(); // generate the actual bar graph
             }
         }
     }
