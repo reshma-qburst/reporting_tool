@@ -29,8 +29,5 @@
         <select ng-model="filterName" ng-options="item for item in filterOptions" ng-init="filterName=filterOptions[0]" ng-change="showChart();" id="filterId"></select>
     </div>
     <bar-chart height="options.height" data="data" hovered="hovered(args)" ng-if="tableData && filterFlag == 1 "></bar-chart>
-    <stackbarchart ng-if="tableData && filterFlag == 0" id="d3stackbar" xaxis-name="" xaxis-pos="" yaxis-name="Population" yaxis-pos="8" d3-format="">
-        <!-- angular directive is stackbarchart -->
-        <!-- directive variables are xaxis-name,yaxis-name,xaxis-pos,yaxis-pos,y axis data format(d3-format)
-and finally the datajson variable which is holding the external data source -->
+    <stackbarchart ng-if="tableData && filterFlag == 0" id="d3stackbar" barchart>
 </div>
