@@ -6,15 +6,15 @@ app.directive('stackbarchart', function() { // Angular Directive
         compile: function(elem, attrs) { // the compilation of DOM is done here.
             // It is responsible for produce HTML DOM or it returns a combined link function
             // Further Docuumentation on this - http://docs.angularjs.org/guide/directive
-
-            var html = "<div id='" + attrs.id + "' ></div>"; // the HTML to be produced
-            var newElem = $(html);
-            elem.replaceWith(newElem); // Replacement of the element.
-            var ourGraph = new StackbarChart(attrs.datajson,
-                attrs.yaxisName, attrs.yaxisPos);
-            ourGraph.workOnElement('#' + attrs.id);
-            // Work on particular element
-            ourGraph.generateGraph(); // generate the actual bar graph
+            return function($scope) {
+                var html = "<div id='" + attrs.id + "' ></div>"; // the HTML to be produced
+                var newElem = $(html);
+                elem.replaceWith(newElem); // Replacement of the element.
+                var ourGraph = new StackbarChart($scope.barchart);
+                ourGraph.workOnElement('#' + attrs.id);
+                // Work on particular element
+                ourGraph.generateGraph(); // generate the actual bar graph
+            }
         }
     }
 });

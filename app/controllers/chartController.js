@@ -24,9 +24,9 @@
                     $scope.trip.push(tripItem.name);
                     jsonStackedBarChartData.push({
                         "tripName": tripItem.name,
-                        "HB": sumBreak,
-                        "RA": sumAcc,
-                        "SC": sumTurn
+                        "HB": tripItem.break,
+                        "RA": tripItem.acceleration,
+                        "SC": tripItem.turn
                     });
                 });
                 item.sumBreak = sumBreak;

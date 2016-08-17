@@ -10,13 +10,13 @@
         "startTime": "2016-07-01T19:43:37+0530",
         "endTime": "2016-07-01T20:10:05+0530",
         "tripAmount": 250,
-        "break": 100,
-        "acceleration": 50,
-        "turn": 50
+        "break": 50,
+        "acceleration": 25,
+        "turn": 25
     }, {
-        "id": "t8",
-        "name": "Trip 8",
-        "address": "Place 8",
+        "id": "t2",
+        "name": "Trip 2",
+        "address": "Place 2",
         "startTime": "2016-07-01T10:10:00+0530",
         "endTime": "2016-07-01T10:40:55+0530",
         "tripAmount": 250,
@@ -24,9 +24,9 @@
         "acceleration": 30,
         "turn": 35
     }, {
-        "id": "t7",
-        "name": "Trip 7",
-        "address": "Place 7",
+        "id": "t3",
+        "name": "Trip 3",
+        "address": "Place 3",
         "startTime": "2016-07-03T16:30:37+0530",
         "endTime": "2016-07-03T17:55:05+0530",
         "tripAmount": 868,
@@ -40,9 +40,9 @@
     "age": 29,
     "phoneNumber": 695583,
     "trip": [{
-        "id": "t2",
-        "name": "Trip 2",
-        "address": "Place 2",
+        "id": "t4",
+        "name": "Trip 4",
+        "address": "Place 4",
         "startTime": "2016-07-01T13:00:15+0530",
         "endTime": "2016-07-01T14:15:05+0530",
         "tripAmount": 560,
@@ -50,9 +50,9 @@
         "acceleration": 45,
         "turn": 35
     }, {
-        "id": "t3",
-        "name": "Trip 3",
-        "address": "Place 3",
+        "id": "t5",
+        "name": "Trip 5",
+        "address": "Place 5",
         "startTime": "2016-07-01T14:00:00+0530",
         "endTime": "2016-07-01T14:15:05+0530",
         "tripAmount": 115,
@@ -66,9 +66,9 @@
     "age": 32,
     "phoneNumber": 695582,
     "trip": [{
-        "id": "t5",
-        "name": "Trip 5",
-        "address": "Place 5",
+        "id": "t6",
+        "name": "Trip 6",
+        "address": "Place 6",
         "startTime": "2016-07-02T08:10:15+0530",
         "endTime": "2016-07-02T08:45:05+0530",
         "tripAmount": 600,
@@ -82,9 +82,9 @@
     "age": 26,
     "phoneNumber": 690002,
     "trip": [{
-        "id": "t6",
-        "name": "Trip 6",
-        "address": "Place 6",
+        "id": "t7",
+        "name": "Trip 7",
+        "address": "Place 7",
         "startTime": "2016-07-02T05:05:45+0530",
         "endTime": "2016-07-02T05:53:05+0530",
         "tripAmount": 55,
@@ -92,9 +92,9 @@
         "acceleration": 55,
         "turn": 25
     }, {
-        "id": "t4",
-        "name": "Trip 4",
-        "address": "Place 4",
+        "id": "t8",
+        "name": "Trip 8",
+        "address": "Place 8",
         "startTime": "2016-07-02T22:05:30+0530",
         "endTime": "2016-07-02T22:40:05+0530",
         "tripAmount": 500,
