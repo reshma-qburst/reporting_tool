@@ -2,17 +2,12 @@
 var StackbarChart = Class
     .create({
         initialize: function(data) {
-
             this.dataJSON = data;
-            /*this.yaxisPos = yaxisPos;
-             */
-
         },
         workOnElement: function(element) {
             this.element = element;
         },
         generateGraph: function() {
-            //d3 specific coding
             var margin = { top: 20, right: 20, bottom: 30, left: 40 },
                 width = 660 - margin.left - margin.right,
                 height = 300 - margin.top - margin.bottom;
@@ -40,8 +35,6 @@ var StackbarChart = Class
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            /*d3.json(this.datajson, function(error, data) {*/
-
             var data = this.dataJSON;
             color.domain(d3.keys(data[0]).filter(function(key) {
                 return key !== "tripName";
@@ -51,7 +44,6 @@ var StackbarChart = Class
                 var y0 = 0;
                 var y1 = 0;
                 d.ages = color.domain().map(function(name) {
-                    debugger;
                     return {
                         name: name,
                         y0: y0,
@@ -133,7 +125,5 @@ var StackbarChart = Class
                 .text(function(d) {
                     return d;
                 });
-            /*}.bind(this));
-             */
         }
     });

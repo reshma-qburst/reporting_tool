@@ -50,7 +50,6 @@
         });
 
         $scope.options = { width: 600, height: 400, 'bar': 'aaa' };
-        //$scope.data = [1, 2, 3, 4];
         $scope.hovered = function(d) {
             $scope.barValue = d;
             $scope.$apply();

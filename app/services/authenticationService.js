@@ -37,12 +37,14 @@
                 $rootScope.ifLoggedIn = true;
                 $cookieStore.put('globals', $rootScope.globals);
                 $cookieStore.put('userName', username);
+                $cookieStore.put('ifLoggedIn', true);
             };
 
             service.ClearCredentials = function() {
                 $rootScope.globals = {};
                 $cookieStore.remove('globals');
                 $cookieStore.remove('userName');
+                $cookieStore.remove('ifLoggedIn');
                 $rootScope.ifLoggedIn = false;
                 $http.defaults.headers.common.Authorization = 'Basic ';
             };

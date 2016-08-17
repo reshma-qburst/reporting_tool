@@ -23,6 +23,7 @@ app.run(['$rootScope', '$location', '$cookieStore', '$http',
         // keep user logged in after page refresh
         $rootScope.globals = $cookieStore.get('globals') || {};
         $rootScope.loggedinuser = $cookieStore.get('userName') || {};
+        $rootScope.ifLoggedIn = $cookieStore.get('ifLoggedIn') || {};
         if ($rootScope.globals.currentUser) {
             $http.defaults.headers.common['Authorization'] = 'Basic ' +
                 $rootScope.globals.currentUser.authdata;
