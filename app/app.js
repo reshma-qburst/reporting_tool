@@ -1,1 +1,5 @@
-var app = angular.module('reportingTool',['ngRoute','ngCookies']);
+angular.module('reportingTool', [
+    'ngRoute',
+    'ngCookies'
+]);
+var app = angular.module('reportingTool');
