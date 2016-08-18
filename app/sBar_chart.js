@@ -9,8 +9,8 @@ var StackbarChart = Class
         },
         generateGraph: function() {
             var margin = { top: 20, right: 20, bottom: 30, left: 40 },
-                width = 660 - margin.left - margin.right,
-                height = 300 - margin.top - margin.bottom;
+                width = 670 - margin.left - margin.right,
+                height = 410 - margin.top - margin.bottom;
 
             var x = d3.scale.ordinal()
                 .rangeRoundBands([0, width], .1);
@@ -108,8 +108,8 @@ var StackbarChart = Class
                 .on("mouseout", function() { tooltip.style("display", "none"); })
                 .on("mousemove", function(d) {
 
-                    var xPosition = d3.event.x - 150;
-                    var yPosition = d3.event.y - 155;
+                    var xPosition = d3.event.x - 200;
+                    var yPosition = d3.event.y - 450;
 
                     tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
                     tooltip.select("text").text(d.y1 - d.y0);
