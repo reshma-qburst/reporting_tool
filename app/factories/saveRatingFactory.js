@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    app.service('saveRating', function() {
+    app.factory('saveRating', function() {
         var ratingArray = [];
         return {
             saveActivity: function(selectedTrip,
