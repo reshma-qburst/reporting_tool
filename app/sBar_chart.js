@@ -95,12 +95,24 @@ var StackbarChart = Class
                 .attr("width", x.rangeBand())
                 .attr("y", function(d) {
                     return y(d.y1);
+
                 })
-                .attr("height", function(d) {
+
+            .attr("height", function(d) {
                     return y(d.y0) - y(d.y1);
                 })
                 .style("fill", function(d) {
                     return color(d.name);
+                })
+                .on("mouseover", function() { tooltip.style("display", null); })
+                .on("mouseout", function() { tooltip.style("display", "none"); })
+                .on("mousemove", function(d) {
+
+                    var xPosition = d3.mouse(this)[0] - 15;
+                    var yPosition = d3.mouse(this)[1] - 25;
+
+                    tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
+                    tooltip.select("text").text(d.y1 - d.y0);
                 });
 
             var legend = svg.selectAll(".legend")
@@ -125,5 +137,23 @@ var StackbarChart = Class
                 .text(function(d) {
                     return d;
                 });
+
+            // Prep the tooltip bits, initial display is hidden
+            var tooltip = svg.append("g")
+                .attr("class", "tooltip")
+                .style("display", "none");
+
+            tooltip.append("rect")
+                .attr("width", 30)
+                .attr("height", 20)
+                .attr("fill", "white")
+                .style("opacity", 0.5);
+
+            tooltip.append("text")
+                .attr("x", 15)
+                .attr("dy", "1.2em")
+                .style("text-anchor", "middle")
+                .attr("font-size", "12px")
+                .attr("font-weight", "bold");
         }
     });

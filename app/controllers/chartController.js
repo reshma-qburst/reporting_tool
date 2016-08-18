@@ -2,6 +2,12 @@
     'use strict';
     app.controller('chartController', ['$scope', 'loadJson', function($scope, loadJson) {
 
+        var sumBreak = 0;
+        var sumAcc = 0;
+        var sumTurn = 0;
+        var total = 0;
+        var jsonVerticalBarChartData = [];
+        var jsonStackedBarChartData = [];
         $scope.filterFlag = 1;
         $scope.filterOptions = ["Driver", "Trip"];
         $scope.orderByField = 'name';
@@ -12,12 +18,6 @@
             $scope.tableData = [];
             $scope.trip = [];
             $scope.driver = [];
-            var sumBreak = 0;
-            var sumAcc = 0;
-            var sumTurn = 0;
-            var total = 0;
-            var jsonVerticalBarChartData = [];
-            var jsonStackedBarChartData = [];
             angular.forEach(tripListData.data, function(item) {
                 angular.forEach(item.trip, function(tripItem) {
                     sumBreak += tripItem.break;
@@ -48,7 +48,6 @@
             });
             $scope.data = jsonVerticalBarChartData;
             $scope.barchart = jsonStackedBarChartData;
-
         });
 
         $scope.options = { width: 600, height: 400, 'bar': 'aaa' };

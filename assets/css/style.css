@@ -271,3 +271,10 @@ th {
     top: 100%;
     left: 0;
 }
+
+
+/** style for stacked bar **/
+
+.tooltip {
+    opacity: 1;
+}

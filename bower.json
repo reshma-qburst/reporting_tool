@@ -1,0 +1,10 @@
+{
+  "name": "reporting_tool",
+  "homepage": "https://github.com/reshma-qburst/reporting_tool",
+  "authors": [
+    "reshma <reshma@qburst.com>"
+  ],
+  "description": "A cab driver status reporting tool",
+  "main": "",
+  "license": "MIT"
+}

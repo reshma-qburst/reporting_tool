@@ -22,10 +22,6 @@
                 scope.$watch('data', function(newVal, oldVal) {
                     chartEl.datum(newVal).call(chart);
                 });
-
-                scope.$watch('height', function(d, i) {
-                    chartEl.call(chart.height(scope.height));
-                })
             }
         }
     });
