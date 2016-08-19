@@ -112,7 +112,7 @@ var StackbarChart = Class
                     var yPosition = d3.event.y - 350;
 
                     tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
-                    tooltip.select("text").text(d.y1 - d.y0);
+                    tooltip.select("text").text((d.name) + " : " + (d.y1 - d.y0));
                 });
 
             var legend = svg.selectAll(".legend")
@@ -144,13 +144,13 @@ var StackbarChart = Class
                 .style("display", "none");
 
             tooltip.append("rect")
-                .attr("width", 30)
+                .attr("width", 55)
                 .attr("height", 20)
                 .attr("fill", "white")
                 .style("opacity", 0.5);
 
             tooltip.append("text")
-                .attr("x", 15)
+                .attr("x", 28)
                 .attr("dy", "1.2em")
                 .style("text-anchor", "middle")
                 .attr("font-size", "12px")
