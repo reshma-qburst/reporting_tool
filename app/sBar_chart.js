@@ -45,6 +45,7 @@ var StackbarChart = Class
                 var y1 = 0;
                 d.ages = color.domain().map(function(name) {
                     return {
+                        trip: d.tripName,
                         name: name,
                         y0: y0,
                         y1: y0 += d[name]
@@ -112,7 +113,7 @@ var StackbarChart = Class
                     var yPosition = d3.event.y - 350;
 
                     tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
-                    tooltip.select("text").text((d.name) + " : " + (d.y1 - d.y0));
+                    tooltip.select("text").text(d.trip + ", " + d.name + " : " + (d.y1 - d.y0));
                 });
 
             var legend = svg.selectAll(".legend")
@@ -144,13 +145,13 @@ var StackbarChart = Class
                 .style("display", "none");
 
             tooltip.append("rect")
-                .attr("width", 55)
+                .attr("width", 90)
                 .attr("height", 20)
                 .attr("fill", "white")
                 .style("opacity", 0.5);
 
             tooltip.append("text")
-                .attr("x", 28)
+                .attr("x", 45)
                 .attr("dy", "1.2em")
                 .style("text-anchor", "middle")
                 .attr("font-size", "12px")

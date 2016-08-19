@@ -1,0 +1,13 @@
+{
+  "name": "prototype",
+  "_cacheHeaders": {
+    "Last-Modified": "Thu, 15 Oct 2015 18:30:53 GMT",
+    "Content-Length": "45574",
+    "Content-Type": "text/javascript; charset=UTF-8"
+  },
+  "main": "index.js",
+  "_source": "https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js",
+  "_target": "*",
+  "_originalSource": "https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js",
+  "_direct": true
+}
