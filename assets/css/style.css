@@ -278,3 +278,10 @@ th {
 .tooltip {
     opacity: 1;
 }
+
+map,
+div[map] {
+    display: block;
+    width: 500px;
+    height: 700px
+}

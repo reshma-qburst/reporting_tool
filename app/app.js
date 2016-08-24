@@ -1,5 +1,5 @@
 angular.module('reportingTool', [
     'ngRoute',
-    'ngCookies'
+    'ngCookies', 'ngMap'
 ]);
 var app = angular.module('reportingTool');

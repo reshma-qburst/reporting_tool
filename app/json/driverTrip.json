@@ -6,33 +6,90 @@
     "trip": [{
         "id": "t1",
         "name": "Trip 1",
-        "address": "Place 1",
+        "address": "Address 1",
         "startTime": "2016-07-01T19:43:37+0530",
         "endTime": "2016-07-01T20:10:05+0530",
         "tripAmount": 250,
-        "break": 50,
-        "acceleration": 25,
-        "turn": 25
+        "location": [{
+            "point": "t1p1",
+            "latitude": 8.490873,
+            "longitude": 76.952748,
+            "HB": true,
+            "RA": false,
+            "SC": false
+        }, {
+            "point": "t1p2",
+            "latitude": 8.52073,
+            "longitude": 76.942287,
+            "HB": true,
+            "RA": true,
+            "SC": true
+        }, {
+            "point": "t1p3",
+            "latitude": 8.547143,
+            "longitude": 76.913887,
+            "HB": false,
+            "RA": true,
+            "SC": true
+        }, {
+            "point": "t1p4",
+            "latitude": 8.568315,
+            "longitude": 76.875671,
+            "HB": false,
+            "RA": false,
+            "SC": false
+        }]
     }, {
         "id": "t2",
         "name": "Trip 2",
-        "address": "Place 2",
+        "address": "Address 2",
         "startTime": "2016-07-01T10:10:00+0530",
         "endTime": "2016-07-01T10:40:55+0530",
         "tripAmount": 250,
-        "break": 35,
-        "acceleration": 30,
-        "turn": 35
+        "location": [{
+            "point": "t2p1",
+            "latitude": 8.513703,
+            "longitude": 76.957105,
+            "HB": false,
+            "RA": false,
+            "SC": true
+        }, {
+            "point": "t2p2",
+            "latitude": 8.508626,
+            "longitude": 76.965746,
+            "HB": false,
+            "RA": true,
+            "SC": false
+        }, {
+            "point": "t2p3",
+            "latitude": 8.4811,
+            "longitude": 76.945582,
+            "HB": false,
+            "RA": true,
+            "SC": true
+        }]
     }, {
         "id": "t3",
         "name": "Trip 3",
-        "address": "Place 3",
+        "address": "Address 3",
         "startTime": "2016-07-03T16:30:37+0530",
         "endTime": "2016-07-03T17:55:05+0530",
         "tripAmount": 868,
-        "break": 30,
-        "acceleration": 35,
-        "turn": 35
+        "location": [{
+            "point": "t3p1",
+            "latitude": 8.483198,
+            "longitude": 76.928295,
+            "HB": true,
+            "RA": true,
+            "SC": false
+        }, {
+            "point": "t3p2",
+            "latitude": 8.429525,
+            "longitude": 77.047811,
+            "HB": true,
+            "RA": true,
+            "SC": false
+        }]
     }]
 }, {
     "id": "d2",
@@ -42,23 +99,68 @@
     "trip": [{
         "id": "t4",
         "name": "Trip 4",
-        "address": "Place 4",
+        "address": "Address 4",
         "startTime": "2016-07-01T13:00:15+0530",
         "endTime": "2016-07-01T14:15:05+0530",
         "tripAmount": 560,
-        "break": 20,
-        "acceleration": 45,
-        "turn": 35
+        "location": [{
+            "point": "t4p1",
+            "latitude": 8.8654820,
+            "longitude": 76.6701470,
+            "HB": false,
+            "RA": false,
+            "SC": true
+        }, {
+            "point": "t4p2",
+            "latitude": 8.8121040,
+            "longitude": 76.7596220,
+            "HB": false,
+            "RA": true,
+            "SC": true
+        }, {
+            "point": "t4p3",
+            "latitude": 8.7646480,
+            "longitude": 76.7884710,
+            "HB": false,
+            "RA": false,
+            "SC": false
+        }, {
+            "point": "t4p4",
+            "latitude": 8.6950340,
+            "longitude": 76.8178810,
+            "HB": true,
+            "RA": false,
+            "SC": true
+        }]
     }, {
         "id": "t5",
         "name": "Trip 5",
-        "address": "Place 5",
+        "address": "Address 5",
         "startTime": "2016-07-01T14:00:00+0530",
         "endTime": "2016-07-01T14:15:05+0530",
         "tripAmount": 115,
-        "break": 20,
-        "acceleration": 55,
-        "turn": 25
+        "location": [{
+            "point": "t5p1",
+            "latitude": 8.5032540,
+            "longitude": 77.0852260,
+            "HB": false,
+            "RA": true,
+            "SC": true
+        }, {
+            "point": "t5p2",
+            "latitude": 8.6080230,
+            "longitude": 77.0046260,
+            "HB": false,
+            "RA": false,
+            "SC": false
+        }, {
+            "point": "t5p3",
+            "latitude": 8.5833350,
+            "longitude": 76.9902280,
+            "HB": false,
+            "RA": false,
+            "SC": true
+        }]
     }]
 }, {
     "id": "d3",
@@ -68,13 +170,39 @@
     "trip": [{
         "id": "t6",
         "name": "Trip 6",
-        "address": "Place 6",
+        "address": "Address 6",
         "startTime": "2016-07-02T08:10:15+0530",
         "endTime": "2016-07-02T08:45:05+0530",
-        "tripAmount": 600,
-        "break": 40,
-        "acceleration": 45,
-        "turn": 15
+        "tripAmount": 1600,
+        "location": [{
+            "point": "t6p1",
+            "latitude": 8.7706940,
+            "longitude": 76.8836260,
+            "HB": false,
+            "RA": false,
+            "SC": true
+        }, {
+            "point": "t6p2",
+            "latitude": 8.7244340,
+            "longitude": 77.0247810,
+            "HB": false,
+            "RA": false,
+            "SC": true
+        }, {
+            "point": "t6p3",
+            "latitude": 8.6753500,
+            "longitude": 77.0852260,
+            "HB": false,
+            "RA": false,
+            "SC": true
+        }, {
+            "point": "t6p4",
+            "latitude": 8.6257090,
+            "longitude": 77.0895420,
+            "HB": false,
+            "RA": false,
+            "SC": true
+        }]
     }]
 }, {
     "id": "d4",
@@ -84,22 +212,60 @@
     "trip": [{
         "id": "t7",
         "name": "Trip 7",
-        "address": "Place 7",
+        "address": "Address 7",
         "startTime": "2016-07-02T05:05:45+0530",
         "endTime": "2016-07-02T05:53:05+0530",
         "tripAmount": 55,
-        "break": 20,
-        "acceleration": 55,
-        "turn": 25
+        "location": [{
+            "point": "t7p1",
+            "latitude": 8.571032,
+            "longitude": 76.866331,
+            "HB": false,
+            "RA": false,
+            "SC": true
+        }, {
+            "point": "t7p2",
+            "latitude": 8.65587,
+            "longitude": 76.783174,
+            "HB": true,
+            "RA": true,
+            "SC": true
+        }, {
+            "point": "t7p3",
+            "latitude": 8.737869,
+            "longitude": 76.716336,
+            "HB": true,
+            "RA": false,
+            "SC": false
+        }, {
+            "point": "t7p4",
+            "latitude": 8.77257,
+            "longitude": 76.679892,
+            "HB": true,
+            "RA": false,
+            "SC": false
+        }]
     }, {
         "id": "t8",
         "name": "Trip 8",
-        "address": "Place 8",
+        "address": "Address 8",
         "startTime": "2016-07-02T22:05:30+0530",
         "endTime": "2016-07-02T22:40:05+0530",
         "tripAmount": 500,
-        "break": 30,
-        "acceleration": 60,
-        "turn": 10
+        "location": [{
+            "point": "t8p1",
+            "latitude": 8.812104,
+            "longitude": 76.759622,
+            "HB": true,
+            "RA": true,
+            "SC": true
+        }, {
+            "point": "t8p2",
+            "latitude": 8.865482,
+            "longitude": 76.670147,
+            "HB": true,
+            "RA": true,
+            "SC": true
+        }]
     }]
 }]

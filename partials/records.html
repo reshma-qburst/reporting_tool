@@ -1,6 +1,6 @@
 <div id="recordsMain" ng-controller="chartController">
     <h1 id="recordHeading">Event Record</h1>
-    <table id="recordsTable">
+    <table id="recordsTable" ng-cloak>
         <thead>
             <tr>
                 <th></th>
@@ -28,6 +28,11 @@
     <div id="filterDiv">
         <select ng-model="filterName" ng-options="item for item in filterOptions" ng-init="filterName=filterOptions[0]" ng-change="showChart();" id="filterId"></select>
     </div>
+    <button ng-click="toggleChartAndMap();">Toggle between chart and map</button>
     <bar-chart height="options.height" data="data" hovered="hovered(args)" ng-if="tableData" ng-hide="filterFlag == 0"></bar-chart>
-    <stackbarchart ng-if="tableData && filterFlag == 0" id="d3stackbar">
+    <stackbarchart ng-if="tableData && filterFlag == 0" id="d3stackbar"></stackbarchart>
+
+    <ng-map zoom="{{map.zoom}}" center="{{map.center.latitude}},{{map.center.longitude}}" control="{{map.control}}">
+        <marker ng-repeat="pos in positions|limitTo:4" position="{{pos.lat}},{{pos.lng}}"></marker>
+    </ng-map>
 </div>

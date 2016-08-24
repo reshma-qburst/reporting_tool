@@ -109,8 +109,8 @@ var StackbarChart = Class
                 .on("mouseout", function() { tooltip.style("display", "none"); })
                 .on("mousemove", function(d) {
 
-                    var xPosition = d3.event.x - 200;
-                    var yPosition = d3.event.y - 350;
+                    var xPosition = d3.event.x - 250;
+                    var yPosition = d3.event.y - 150;
 
                     tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
                     tooltip.select("text").text(d.trip + ", " + d.name + " : " + (d.y1 - d.y0));
