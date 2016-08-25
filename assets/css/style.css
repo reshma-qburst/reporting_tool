@@ -285,3 +285,8 @@ div[map] {
     width: 500px;
     height: 700px
 }
+
+.toggleButton {
+    padding: 5px;
+    margin: 10px;
+}

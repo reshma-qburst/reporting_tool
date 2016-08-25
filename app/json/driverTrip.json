@@ -64,7 +64,7 @@
             "point": "t2p3",
             "latitude": 8.4811,
             "longitude": 76.945582,
-            "HB": false,
+            "HB": true,
             "RA": true,
             "SC": true
         }]

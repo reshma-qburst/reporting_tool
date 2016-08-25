@@ -2,10 +2,6 @@
     'use strict';
     app.controller('chartController', ['$scope', 'loadJson', function($scope, loadJson) {
 
-        var sumBreak = 0;
-        var sumAcc = 0;
-        var sumTurn = 0;
-        var total = 0;
         var jsonVerticalBarChartData = [];
         var jsonStackedBarChartData = [];
         var HbCount = 0;
@@ -35,37 +31,29 @@
 
                         if (item.HB === true) {
                             HbCount = HbCount + 1;
-                        } else if (item.SC === true) {
+                        }
+                        if (item.SC === true) {
                             ScCount = ScCount + 1;
-                        } else if (item.RA === true) {
+                        }
+                        if (item.RA === true) {
                             RaCount = RaCount + 1;
                         }
                     });
-                    /*console.log(HbCount);
-                     */
-                    HbCount = 0;
-                    ScCount = 0;
-                    RaCount = 0;
-                    /*sumBreak += tripItem.break;
-sumAcc += tripItem.acceleration;
-sumTurn += tripItem.turn;
-$scope.trip.push(tripItem.name);*/
+
                     jsonStackedBarChartData.push({
                         "tripName": tripItem.name,
-                        "HB": tripItem.break,
-                        "RA": tripItem.acceleration,
-                        "SC": tripItem.turn
+                        "HB": HbCount,
+                        "RA": RaCount,
+                        "SC": ScCount
                     });
-
+                    item.sumBreak = HbCount;
+                    item.sumAcc = RaCount;
+                    item.sumTurn = ScCount;
+                    item.total = item.sumBreak + item.sumAcc + item.sumTurn;
                 });
-                item.sumBreak = HbCount;
-                item.sumAcc = RaCount;
-                item.sumTurn = ScCount;
-                item.total = HbCount + RaCount + ScCount;
-                sumBreak = 0;
-                sumAcc = 0;
-                sumTurn = 0;
-                total = 0;
+                HbCount = 0;
+                ScCount = 0;
+                RaCount = 0;
                 $scope.tableData.push(item);
                 $scope.driver.push(item.name);
                 jsonVerticalBarChartData.push({
@@ -92,8 +80,10 @@ $scope.trip.push(tripItem.name);*/
             }
         };
 
+        $scope.custom = true;
         $scope.toggleChartAndMap = function() {
-            $scope.mapFlag = 1;
+            $scope.custom = $scope.custom ? false : true;
+            console.log($scope.custom);
         };
 
         // map object
@@ -136,10 +126,10 @@ $scope.trip.push(tripItem.name);*/
             };
 
             directionsService.route(request, function(response, status) {
-                console.log(response);
                 if (status === google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
-                    directionsDisplay.setMap($scope.map.control.getGMap());
+                    /*directionsDisplay.setMap($scope.map.control.getGMap());
+                     */
                     /*directionsDisplay.setPanel(document.getElementById('directionsList'));
                      */
                 } else {
