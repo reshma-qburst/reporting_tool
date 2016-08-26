@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    app.controller('chartController', ['$scope', 'loadJson', function($scope, loadJson) {
+    app.controller('chartController', ['$rootScope', '$scope', 'loadJson', function($rootScope, $scope, loadJson) {
 
         var jsonVerticalBarChartData = [];
         var jsonStackedBarChartData = [];
@@ -13,6 +13,10 @@
         $scope.reverseSort = false;
         $scope.positions = [];
         $scope.mapFlag = 0;
+        $scope.customBChart = true;
+        $scope.customSChart = true;
+        $scope.customMap = false;
+
 
         loadJson.getTripList().then(function(tripListData) {
 
@@ -28,6 +32,14 @@
                             lat: item.latitude,
                             lng: item.longitude
                         });
+
+                        $rootScope.wayPoints = [{
+                            location: {
+                                lat: item.latitude,
+                                lng: item.longitude
+                            },
+                            stopover: true
+                        }];
 
                         if (item.HB === true) {
                             HbCount = HbCount + 1;
@@ -65,7 +77,7 @@
             $scope.barchart = jsonStackedBarChartData;
         });
 
-        $scope.options = { width: 600, height: 400, 'bar': 'aaa' };
+        $scope.options = { width: 400, height: 500, 'bar': 'aaa' };
         $scope.hovered = function(d) {
             $scope.barValue = d;
             $scope.$apply();
@@ -75,32 +87,37 @@
         $scope.showChart = function() {
             if ($scope.filterName == 'Trip') {
                 $scope.filterFlag = 0;
+                $scope.customBChart = false;
+                $scope.customSChart = true;
             } else if ($scope.filterName == 'Driver') {
                 $scope.filterFlag = 1;
+                $scope.customBChart = true;
+                $scope.customSChart = false;
             }
         };
 
-        $scope.custom = true;
+
         $scope.toggleChartAndMap = function() {
-            $scope.custom = $scope.custom ? false : true;
-            console.log($scope.custom);
+            $scope.customBChart = $scope.customBChart ? false : true;
+            $scope.customSChart = $scope.customSChart ? false : true;
+            $scope.customMap = $scope.customMap ? false : true;
         };
 
         // map object
         $scope.map = {
             control: {},
             center: {
-                latitude: 8.5241390,
-                longitude: 76.9366380
+                latitude: 8.568315,
+                longitude: 76.875671
             },
-            zoom: 12
+            zoom: 11
         };
 
         // marker object
         $scope.marker = {
             center: {
-                latitude: 8.5241390,
-                longitude: 76.9366380
+                latitude: 8.568315,
+                longitude: 76.875671
             }
         }
 

@@ -29,10 +29,18 @@
         <select ng-model="filterName" ng-options="item for item in filterOptions" ng-init="filterName=filterOptions[0]" ng-change="showChart();" id="filterId"></select>
     </div>
     <button class="toggleButton" ng-click="toggleChartAndMap();">Toggle between chart and map</button>
-    <bar-chart height="options.height" data="data" hovered="hovered(args)" ng-if="tableData" ng-hide="filterFlag == 0 && !hide"></bar-chart>
-    <stackbarchart ng-if="tableData && filterFlag == 0" id="d3stackbar"></stackbarchart>
+    <bar-chart height="options.height" data="data" hovered="hovered(args)" ng-if="tableData" ng-hide="filterFlag == 0 || !customBChart"></bar-chart>
+    <stackbarchart ng-if="tableData && filterFlag == 0 && customSChart" id="d3stackbar"></stackbarchart>
 
-    <ng-map zoom="{{map.zoom}}" center="{{map.center.latitude}},{{map.center.longitude}}" control="{{map.control}}">
+    <ng-map ng-show="customMap" zoom="{{map.zoom}}" center="{{map.center.latitude}},{{map.center.longitude}}" control="{{map.control}}">
         <marker ng-repeat="pos in positions|limitTo:4" position="{{pos.lat}},{{pos.lng}}"></marker>
+          <directions 
+          draggable="true"
+          panel="directions-panel"
+          travel-mode="DRIVING"
+          waypoints="{{wayPoints}}"
+          origin="map.center.latitude"
+          destination="map.center.longitude">
+        </directions>
     </ng-map>
 </div>
